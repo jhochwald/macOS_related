@@ -22,7 +22,11 @@ Otherwise new users will be prompted to approve any new servers.
 ### Use with [NoMAD](https://nomad.menu/products/)
 
 ``` shell
+# System Default
 sudo defaults write /Library/Preferences/com.trusourcelabs.NoMAD SignInCommand -string '/usr/local/bin/StateChangeAction'
+
+# per User (not recommended)
+defaults write com.trusourcelabs.NoMAD SignInCommand -string '/usr/local/bin/StateChangeAction'
 ```
 
 *Check that the Path match your system!*
@@ -34,7 +38,11 @@ sudo defaults write /Library/Preferences/com.trusourcelabs.NoMAD SignInCommand -
 ### Use with [NoMAD](https://nomad.menu/products/)
 
 ``` shell
+# System Default
 sudo defaults write /Library/Preferences/com.trusourcelabs.NoMAD SignOutCommand -string '/usr/local/bin/StateChangeAction'
+
+# per User (not recommended)
+defaults write com.trusourcelabs.NoMAD SignOutCommand -string '/usr/local/bin/StateChangeAction'
 ```
 
 *Check that the Path match your system!*
@@ -47,7 +55,11 @@ It try to reach the Login Domain Controller found by [NoMAD](https://nomad.menu/
 ### Use with [NoMAD](https://nomad.menu/products/)
 
 ``` shell
+# System Default
 sudo defaults write /Library/Preferences/com.trusourcelabs.NoMAD StateChangeAction -string '/usr/local/bin/StateChangeAction'
+
+# per User (not recommended)
+defaults write com.trusourcelabs.NoMAD StateChangeAction -string '/usr/local/bin/StateChangeAction'
 ```
 
 *Check that the Path match your system!*
