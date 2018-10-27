@@ -1,26 +1,14 @@
-# macOS related
+# DOT Files
 
-All my macOS related stuff has a new home here.
+Profiles and my personal DOT Files
 
-## ActiveDirectory
+## macOS
 
-In [ActiveDirectory](ActiveDirectory) is mostly [NoMAD](https://nomad.menu/products/) related stuff.
+In [macOS](macOS) all my macOS (mostly Bash) related stuff is located.
 
-## macOS Mojaves dark mode
+## PowerShell Core
 
-In [DarkMode](DarkMode) my tooling to automate macOS Mojaves dark mode is located.
-
-## Dot Files
-
-In [DotFiles](DotFiles) my Dot collection is located.
-
-### macOS
-
-In macOS all my macOS (mostly Bash) related stuff is located.
-
-### PowerShell Core
-
-In PWSH my PowerShell Core stuff is located.
+In [PWSH](PWSH) my PowerShell Core stuff is located.
 
 ## License
 

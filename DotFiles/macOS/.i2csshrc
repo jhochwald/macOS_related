@@ -1,0 +1,26 @@
+---
+version: 2
+rows: 1
+clusters:
+  fws:
+    rows: 1
+    login: <LOGIN>
+    broadcast: true
+    hosts:
+      - <NODE_IP>
+      - <NODE_IP>
+  switches:
+    rows: 1
+    login: <LOGIN>
+    broadcast: true
+    hosts:
+      - <NODE_IP>
+      - <NODE_IP>
+  macs:
+    rows: 1
+    login: <LOGIN>
+    broadcast: true
+    hosts:
+      - <NODE_IP>
+      - <NODE_IP>
+      - <NODE_IP>
