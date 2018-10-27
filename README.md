@@ -6,6 +6,10 @@ All my macOS related stuff has a new home here.
 
 In [ActiveDirectory](ActiveDirectory) is mostly [NoMAD](https://nomad.menu/products/) related stuff.
 
+## macOS Mojaves dark mode
+
+In [DarkMode](DarkMode) my tooling to automate macOS Mojaves dark mode is located.
+
 ## License
 
 Copyright (c) 2018, Joerg Hochwald
