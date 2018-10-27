@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Load some defaults
+. /etc/bashrc
+
+PATH=/usr/local/bin:/usr/local/sbin/:/var/root/bin/:$PATH
+export PATH
+
+# Get the User Home
+ADHome=$(defaults read com.trusourcelabs.NoMAD UserHome 2>/dev/null | cut -c 3- 2>/dev/null)
+
+# Check
+[ -z "${ADHome}" ] && exit 1
+
+# Build another one just to check if it is mounted
+ADShareChecked=$(mount | grep -i smbfs | grep -i "$ADHome" | awk '{ print $3 }')
+
+# Is the Drive mounted?
+if [ -z ${ADShareChecked} ]; then
+	echo "Not Mounted - We do nothing, for now" >/dev/null 2>&1
+else
+	umount -f $ADShareChecked >/dev/null 2>&1
+	umount -f $ADShareChecked >/dev/null 2>&1
+	umount -f $ADShareChecked >/dev/null 2>&1
+fi

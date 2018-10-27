@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# Author: Joerg Hochwald <http://jhochwald.com>
+# License: BSD 3-Clause License
+
+# Load some defaults
+. /etc/bashrc
+
+PATH=/usr/local/bin:/usr/local/sbin/:/var/root/bin/:$PATH
+export PATH
+
+# check if Finder is running (Apply to early boot execution)
+until pgrep Finder >/dev/null; do
+	sleep 2
+done
+
+# Get Current User
+currentUser=$(stat -f %Su /dev/console)
+
+[ -z "${currentUser}" ] && exit 1
+
+# Are we signed in
+ADSignedIn=$(defaults read com.trusourcelabs.NoMAD SignedIn 2>/dev/null)
+
+# Check if we are connected
+if [[ $ADSignedIn -ne 1 ]]; then exit 1; fi
+
+# Get the User Short Name
+ADUser=$(defaults read com.trusourcelabs.NoMAD UserShortName 2>/dev/null)
+
+# Check
+[ -z "${ADUser}" ] && exit 1
+
+# Author: Joerg Hochwald <http://jhochwald.com>
+# License: BSD 3-Clause License
+
+# Get the User Home
+ADHome=$(defaults read com.trusourcelabs.NoMAD UserHome 2>/dev/null | cut -c 3- 2>/dev/null)
+
+# Check
+[ -z "${ADHome}" ] && exit 1
+
+# Build the Sting
+ADShare="smb://$ADUser@$ADHome"
+
+# Build another one just to check if it is mounted
+ADShareCheck="//$ADUser@$ADHome"
+
+# Check if the Drive is mounted
+if mount | grep "$ADShareCheck" >/dev/null; then
+	echo "Mounted, we do nothing, for now" >/dev/null 2>&1
+else
+	# Kerberized Mount the Drive as the Console User
+	sudo -u $currentUser osascript -e "try" -e "mount volume \"$ADShare\"" -e "on error" -e "end try"
+fi

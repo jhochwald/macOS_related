@@ -1,10 +1,32 @@
-# macOS related
+# ActiveDirectory
 
-All my macOS related stuff has a new home here.
+Scripts I use with [NoMAD](https://nomad.menu/products/) and [ControlPlane](https://www.controlplaneapp.com).
 
-## ActiveDirectory
+## Requirements
 
-In [ActiveDirectory](ActiveDirectory) is mostly [NoMAD](https://nomad.menu/products/) related stuff.
+Download and Install [NoMAD](https://nomad.menu/products/).
+
+Option: Execute the following
+
+``` shell
+sudo defaults write /Library/Preferences/com.apple.NetworkAuthorization AllowUnknownServers -bool YES
+```
+
+Otherwise new users will be prompted to approve any new servers.
+
+## MountAdHome
+
+[MountAdHome](MountAdHome) is a script that mount the Homedirectory. Is uses the information that it gets from [NoMAD](https://nomad.menu/products/).
+[MountAdHome](MountAdHome) will check if the mount is needed or not.
+
+## UnmountAdHome
+
+[UnmountAdHome](UnmountAdHome) is a script that dismounts the Homedirectory, if needed. Is uses the information that it gets from [NoMAD](https://nomad.menu/products/).
+
+## StateChangeAction
+
+[StateChangeAction](StateChangeAction) is a script that my Mac executes whenever a network change is detected by [NoMAD](https://nomad.menu/products/) or a profile is changed by [ControlPlane](https://www.controlplaneapp.com).
+It try to reach the Login Domain Controller found by [NoMAD](https://nomad.menu/products/). If the Domain controller is reachable it checks if the HoneDirectory is mounted or not, if not it will mount if by execute [MountAdHome](MountAdHome). If the Domain Controller is unreachable, it will execute [UnmountAdHome](UnmountAdHome) to unmount the drive (if needed)
 
 ## License
 

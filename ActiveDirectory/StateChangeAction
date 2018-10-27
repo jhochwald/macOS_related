@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Author: Joerg Hochwald <http://jhochwald.com>
+# License: BSD 3-Clause License
+
+# Load some defaults
+. /etc/bashrc
+
+PATH=/usr/local/bin:/usr/local/sbin/:/var/root/bin/:$PATH
+export PATH
+
+# check if Finder is running (Apply to early boot execution)
+until pgrep Finder >/dev/null; do
+	sleep 2
+done
+
+# Find the Domain Controller
+ADDomainController=$(defaults read com.trusourcelabs.NoMAD ADDomainController 2>/dev/null)
+
+[ -z "${ADDomainController}" ] && exit 1
+
+# Can we reach the DC?
+if ping -c 1 $ADDomainController &>/dev/null; then
+	/usr/local/bin/MountAdHome >/dev/null 2>&1
+else
+	/usr/local/bin/UnmountAdHome >/dev/null 2>&1
+fi
