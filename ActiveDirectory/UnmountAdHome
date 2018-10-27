@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Author: Joerg Hochwald <http://jhochwald.com>
+# License: BSD 3-Clause License
+
 # Load some defaults
 . /etc/bashrc
 
