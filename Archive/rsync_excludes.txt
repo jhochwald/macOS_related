@@ -1,0 +1,21 @@
+.Spotlight-*/
+.Trashes
+/tmp/*
+/Network/*
+/cores/*
+/afs/*
+/automount/*
+/private/tmp/*
+/private/var/run/*
+/private/var/spool/postfix/*
+/private/var/vm/*
+/Previous Systems.localized
+/Volumes/*
+*/.Trash
+._Thumbs.db
+.DS_Store
+._.Trashes
+.com.apple.timemachine.donotpresent
+._.com.apple.timemachine.donotpresent
+.apdisk
+.fseventsd
