@@ -31,9 +31,6 @@ ADUser=$(defaults read com.trusourcelabs.NoMAD UserShortName 2>/dev/null)
 # Check
 [ -z "${ADUser}" ] && exit 1
 
-# Author: Joerg Hochwald <http://jhochwald.com>
-# License: BSD 3-Clause License
-
 # Get the User Home
 ADHome=$(defaults read com.trusourcelabs.NoMAD UserHome 2>/dev/null | cut -c 3- 2>/dev/null)
 
