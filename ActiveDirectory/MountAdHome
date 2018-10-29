@@ -53,7 +53,7 @@ else
 	# Do a check to prevent double mounting
 	if [ ! -d "$MountPoint" ]; then
 		# Do another check to prevent double mounting
-		if ! mount | grep "$MountPoint" >/dev/null ; then
+		if ! mount | grep "$MountPoint" >/dev/null; then
 			# Kerberized Mount the Drive as the Console User
 			sudo -u $currentUser osascript -e "try" -e "mount volume \"$ADShare\"" -e "on error" -e "end try"
 		fi
