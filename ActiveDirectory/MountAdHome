@@ -43,10 +43,19 @@ ADShare="smb://$ADUser@$ADHome"
 # Build another one just to check if it is mounted
 ADShareCheck="//$ADUser@$ADHome"
 
+# Where do we expect the Drive to be mounted?
+MountPoint="/Volumes/$ADUser"
+
 # Check if the Drive is mounted
 if mount | grep "$ADShareCheck" >/dev/null; then
 	echo "Mounted, we do nothing, for now" >/dev/null 2>&1
 else
-	# Kerberized Mount the Drive as the Console User
-	sudo -u $currentUser osascript -e "try" -e "mount volume \"$ADShare\"" -e "on error" -e "end try"
+	# Do a check to prevent double mounting
+	if [ ! -d "$MountPoint" ]; then
+		# Do another check to prevent double mounting
+		if ! mount | grep "$MountPoint" >/dev/null ; then
+			# Kerberized Mount the Drive as the Console User
+			sudo -u $currentUser osascript -e "try" -e "mount volume \"$ADShare\"" -e "on error" -e "end try"
+		fi
+	fi
 fi
