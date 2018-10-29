@@ -31,6 +31,7 @@ I use Google Chrome only for a few things. Most of my daily browsing is done wit
 #### Microsoft Office 2016
 
 No brainer! I use Office 365 a lot and most of the documents from 3rd parties are in the Microsoft Office format.
+It replaced a lot of other services over the years. I migrated most of my (pages and numbers) data. The collaboration features are the killer feature here.
 
 #### Parallels Desktop
 
@@ -51,6 +52,10 @@ My Admin access toolbelt! This awesome software makes remote access to nearly ev
 #### ScreenSteps
 
 I still use ScreenSteps! It's my last 32 Bit application (Stiil use 2.9.7) to avoid the update with the creapy licensing and pricing modell. I will miss ScreenSteps :(
+
+#### Skype for Business
+
+Mostly replaced by Microsoft Teams, but for a few things Skype for Business is still in use (Skype Meetings and external communication aka Federation with other Skype fpr Business and Lync Users)
 
 #### Spotify
 
@@ -94,13 +99,18 @@ A great Markdown editor!
 
 Electron based Markdown editor. Since a while I use it more, and more... For bigger documents.
 
+#### Microsoft OneDrive
+
+Availible as free download from Microsoft. You might want to use the App Store version instead.
+I switched from DropBox to OneDrive a while ago! And with the new selective Sync feature of OneNote it is perfect for my use case(s). And I can manage multiple Accounts with one Solution, without mixing or merge the data. I can use my personal OneDrive and Multiple Office 365 (commercial) OneDrive accounts. And since a while it's easy to access the Document Libraries of SharePoint Sites. All in one place.
+
+#### Microsoft Teams
+
+The favorite collaboration solution for us! Still miss a few things here and there.
+
 #### NoMAD
 
 Kerberos based on my Active Directory Account! I no longer bind my Mac to the Active Directory...
-
-#### OneDrive
-
-Availible as free download from Microsoft. You might want to use the App Store version instead.
 
 #### Platypus
 
@@ -150,9 +160,26 @@ Formerly known as Rucksack! Handles all the archives that my Mac can't.
 
 Perfect for create or convert Icons... For Websites, Apps and much more!
 
+#### Keynote
+
+I use Keynote to create slides. I still use it more then PowerPoint... But PowerPoint fits perfect in my daily Workflow and the Office 365 services that I use.
+
+#### Microsoft OneNote
+
+I replaced all my other Note taking and Todo Applications with OneNote a while ago. It fits perfect into my Office 365 workflows and together with Microsoft Teams it became a kilelr app for me.
+It dropped Evernote a while ago and I use Notes (Apple) just on my mobile devices from time to time. Don't get me wrong here: It's a great app and due to to iCloud sync it works on all my devices, but OneNote integrates into Office 365 very, very, deeply.
+
 #### Microsoft Remote Desktop
 
 I use this a lot to access RDP hosts.
+
+#### Numbers
+
+In my case more a legacy app! I replaced it with Excel a long time ago.
+
+#### Pages
+
+Like Numbers: Legacy and replaced mostly with Word.
 
 #### Remote Desktop (Apple)
 
