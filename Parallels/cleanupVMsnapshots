@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+###
+# Remove all Snapshots for a given VM
+# Based on https://github.com/toonetown/prl-tools/blob/master/bin/prl_rm_snapshots
+###
+
+# We make sure that we cover all Filenames.
+export LC_CTYPE=en_US.UTF-8
+export LANG="UTF-8"
+
+# Save the VM name from the given parameter into a variable
+VM_NAME="${1}"
+
+# Check if we have a VM name
+[ -n "${VM_NAME}" ] || {
+	echo "Please specify the VM Name"
+	echo ""
+	echo "Usage: ${0} <ID | NAME>"
+	echo ""
+	echo "Use 'prlctl list -a' to get a list of availible VMs"
+
+	# Bye bye
+	exit 1
+}
+
+# Check for the VM
+/usr/local/bin/prlctl status "${VM_NAME}" >/dev/null || exit $ ?
+
+# Get the list of snapshots and delete them all - but delete them in reverse order for speed
+for SnapShot in $(/usr/local/bin/prlctl snapshot-list "${VM_NAME}" | sed -En 's/^.*{([^}]*)}.*$/\1/p' | tail -r); do
+	/usr/local/bin/prlctl snapshot-delete "${VM_NAME}" -i "${SnapShot}" || exit 1
+done
